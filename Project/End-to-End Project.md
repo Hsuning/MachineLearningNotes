@@ -1,22 +1,26 @@
 # Introduction
 Main steps for analytics machine learning project.
 
-## 1.  Look at the big picture.
-d
+1. Look at the big picture / Problem Statement
+	- Purpose
+	- Data
 
-## 2.  Get the data.
+2. Get the data
     
-## 3.  Discover and visualize the data to gain insights.
+3. Discover and visualize the data to gain insights
+	- View the variables
+	- Check the dimensions of variables
+	- Visualize data
     
-## 4.  Prepare the data for Machine Learning algorithms.
+4.  Prepare the data for Machine Learning algorithms.
     
-## 5.  Select a model and train it.
+5.  Select a model and train it.
     
-## 6.  Fine-tune your model.
+6.  Fine-tune your model.
     
-## 7.  Present your solution.
+7.  Present your solution.
     
-## 8.  Launch, monitor, and maintain your system.
+8.  Launch, monitor, and maintain your system.
 
 
 In my point of view, the first step of the machine learning project is always to understand the business needs and frame the problem with end-users. End-users can be a business team or even another data science team. Building a model is important, but not the end goal. The goal would be how does the company and the end-users expect to use and benefit from the model. Further, it is also important to understand what is the current solution, what will be changed with the new solution.  

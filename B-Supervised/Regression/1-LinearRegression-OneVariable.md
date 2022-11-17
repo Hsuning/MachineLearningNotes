@@ -1,5 +1,8 @@
-#LinearRegression #LinearRegressionOneVariable #Supervised 
-# Linear Regression with one variable 
+#LinearRegression #LinearRegressionOneVariable #Supervised
+
+# Linear Regression with One Variable
+```toc
+```
 
 ## Concept
 ```
@@ -19,12 +22,13 @@
 feature        model             prediction
                                 (estimated y)
 ```
-- Also called univariate linear regression
+
+- Also called univariate (only one target variable) linear regression
 - Only take a single feature x, and output the estimated $\hat y$
 - $f(x) = wx+b$
-	- linear function
-	- $f_{w,b}(x) = wx+b$: we can drop w and b and just write f
-	- $w,b$: #Parameter, w for slope, b for shift the time
+	- Linear function maps from x to y
+	- $f_{w,b}(x) = wx+b$: we can drop $w, b$ and just write $f(x)$
+	- $w,b$: #Parameter, w for weight, b for bias
 
 ## Notation
 ![[supervised-1-3.png]]
@@ -58,18 +62,22 @@ print(f"${cost_1200sqft:.0f} thousand dollars")
 
 ## Cost Function
 #CostFunction #MeanSquaredErrorCostFunction #SquaredErrorCostFunction
-- Provide a measure of how well our predictions match our training data. Minimizing the cost can provide optimal values of $w, b$ of a model.
-- Utilize input training data to fit the parameters $w, b$ by minimizing a measure of the error between our predictions and the actual data $y^{(i)}$. The measure is called the _cost_, $J(w,b)$. In training we measure the cost over all of our training samples X, y.
-- Goal --> Find $w,b$: $\hat y^(i)$ is close to $y^{(i)}$ for all $(x^{(i)}, y^{(i)})$
+>The choice of (𝑤,𝑏) that fits your data the best is the one that has the smallest cost 𝐽(𝑤,𝑏)
+
+- Provide a measure of the error between our predictions and the actual data $y^{(i)}$
+- Use to compare how one choice of $(w, b)$ is better or worse than another choice
+- Minimizing the cost can provide optimal values of $w, b$
+- The measure is called the _cost_, $J(w,b)$. In training, we measure the cost over all of our training samples $X, y$
+- Goal -> Find $w,b$: $\hat y^{(i)}$ is close to $y^{(i)}$ for all $(x^{(i)}, y^{(i)})$
 - $J(w,b) = \frac{1}{2m} \sum_{i=1}^m (\hat y - y)^2$
-	- $\hat y - y$: error, dirrerence between the target value and the prediction
+	- $\hat y - y$: error, difference between the target value and the prediction
 	- $m$ : number of training examples
 	- $\sum$: sum up to measure the error across the entire training set
 	- $\frac{1}{m}$ : compute the average squared error so cost function will not automatically get bigger as the training set size gets larger
 	- $\frac{1}{2m}$: make calculation a bit neater
 	- $J(w,b)$: cost function
 - always end up with a bow shape or hammock shape
-- 
+
 ```
 def compute_cost(x, y, w, b): 
     """
@@ -96,24 +104,28 @@ def compute_cost(x, y, w, b):
 
     return total_cost
 ```
+
 [Cost_function_Representation](.PythonCodes/Supervised_1_2/C1_W1_Lab04_Cost_function_Soln.ipynb)
 
+## Goal
+> The goal of linear regression is to find the parameters w or (w, b) that results in the smallest possible value J(w)
 
-## General Case
-- model: $f_{w,b}(x) = wx+b$
-- parameters: $w, b$
-- cost function: $J(w,b) = \frac{1}{2m} \sum_{i=1}^m (f_{w,b}(x^{(i)}) - y)^2$ =  $J(w,b) = \frac{1}{2m} \sum_{i=1}^m (wx^{(i)}+b - y^{(i)})^2$ 
-- **goal of linear regression**: $minimize_{w,b}J(w,b)$
-- visualisation: 3D plot or contour plot (a graphical technique for representing a 3-dimensional surface by plotting constant z slices, called contours, on a 2-dimensional format)
+### General Case
+- Model: $f_{w,b}(x) = wx+b$
+- Parameters: $w, b$
+- Cost function: $J(w,b) = \frac{1}{2m} \sum_{i=1}^m (f_{w,b}(x^{(i)}) - y)^2$ = $J(w,b) = \frac{1}{2m} \sum_{i=1}^m (wx^{(i)}+b - y^{(i)})^2$
+- **Goal of linear regression**: $minimize_{w,b}J(w,b)$
+- Visualization: 3D plot or contour plot (a graphical technique for representing a 3-dimensional surface by plotting constant z slices, called contours, on a 2-dimensional format)  
 ![[supervised-1.png]]
 - Choose w, b that the cost is close to the center of the small ellipse (minimum)
 
-## Simplified Case --> b = 0 
-- model: $f_{w}(x) = wx$
-- parameters: $w$
-- cost function: $J(w) = \frac{1}{2m} \sum_{i=1}^m (f_{w}(x^{(i)}) - y)^2$
-- **goal of linear regression**: $minimize_{w}J(w)$
-- visualisation:
+### Simplified Case --> B = 0
+- Model: $f_{w}(x) = wx$
+- Parameters: $w$
+- Cost function: $J(w) = \frac{1}{2m} \sum_{i=1}^m (f_{w}(x^{(i)}) - y)^2$
+- **Goal of linear regression**: $minimize_{w}J(w)$
+- Visualization:
+
 ```
                 J(w)
          │ Function of w
@@ -131,35 +143,35 @@ def compute_cost(x, y, w, b):
       0 ─┴──────*─────────── w
          0 0.5 1.0 1.5 2.0 2
 ```
+
 - Choose w to minimize $J(w)$
 	- choose the value of w that causes $J(w)$ to be as small as possible
 	- ex: w=1 here (\*)
 
+## Gradient Descent
+> Use gradient descent to find the value $(w,b)$ that gets the smallest possible cost $J(w,b)$
 
-## Conclusion
-```
-The goal of linear regression is to find the parameters w or (w, b) that results in the smallest possible value J(w)
-```
+### Concept
+- #GradientDescent with #SquaredErrorCostFunction  
+- Repeated steps to adjust the value of parameter $(w, b)$ to gradually get a smaller cost $J(w,b)$
+repeat until convergence {  
+$w=w-\alpha*\frac{d}{dw}J(w,b) = w - \alpha\frac{1}{m}\sum_{i=0}^{m-1}(f_{w,b}(x^{(i)})-y^{(i)})x^{(i)}$  
+$b = b-\alpha*\frac{d}{db}J(w,b) = b - \alpha\frac{1}{m}\sum_{i=0}^{m-1}(f_{w,b}(x^{(i)})-y^{(i)})$  
+}  
+- _use i=0 and m-1 in codes_  
+- _update w and b simultaneously_  
 
-
-# Gradient Descent for linear regression
-- #GradientDescent with #SquaredErrorCostFunction 
-repeat until convergence {
-$w=w-\alpha*\frac{d}{dw}J(w,b) = w - \alpha\frac{1}{m}\sum_{i=0}^{m-1}(f_{w,b}(x^{(i)})-y^{(i)})x^{(i)}$
-$b = b-\alpha*\frac{d}{db}J(w,b) = b - \alpha\frac{1}{m}\sum_{i=0}^{m-1}(f_{w,b}(x^{(i)})-y^{(i)})$
-}
-_use i=0 and m-1 in codes_
-_update w and b simultaneously_
-By the rule of calculus:
+### Partial Derivative
+By the rule of calculus:  
 ![[supervised-1-2.png]]
-- As #SquaredErrorCostFunction ( #CovexFunction with **bowl shape**) is used here. 
-	- Due to the **bowl shape**, the derivatives will always lead gradient descent toward the bottom where the gradient is zero. 
-	- The cost function does not and will never have multiple #LocalMinima. **It has only a single #GlobalMinima and will always converge to this point**. 
-- #BatchGradientDescent: each step of gradient descent uses all the training data
-- #SubsetsGradientDescent: look at smaller subests of the training data at each update step
-We use batch gradient descent for linear regreassion.
 
-- implementing derivative part ($\frac{d*J(w,b)}{dw}$, $\frac{d*J(w,b)}{db}$) above 
+### Squared Error Cost Function
+- As #SquaredErrorCostFunction ( #CovexFunction with **bowl shape**) is used here.
+	- Due to the **bowl shape**, the derivatives will always lead a gradient descent toward the bottom, where the gradient is zero.
+	- The cost function does not and will never have multiple #LocalMinima. **It has only a single #GlobalMinima and will always converge to this point**
+
+- Implementing derivative part ($\frac{d*J(w,b)}{dw}$, $\frac{d*J(w,b)}{db}$) above
+
 ```
 def compute_gradient(x, y, w, b): 
     """
@@ -191,6 +203,7 @@ def compute_gradient(x, y, w, b):
 ```
 
 - Gradient descent, utilizing compute_gradient and compute_cost
+
 ```
 def gradient_descent(x, y, w_in, b_in, alpha, num_iters, cost_function, gradient_function): 
     """
@@ -240,4 +253,5 @@ def gradient_descent(x, y, w_in, b_in, alpha, num_iters, cost_function, gradient
  
     return w, b, J_history, p_history #return w and J,w history for graphing
 ```
+
 [Gradien_Descent_Representation](.PythonCodes/Supervised_1_2/C1_W1_Lab05_Gradient_Descent_Soln.ipynb)
