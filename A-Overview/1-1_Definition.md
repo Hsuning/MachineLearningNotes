@@ -1,10 +1,6 @@
 # Definition of Machine Learning
-
-## Table of Contents
-1. [[#Definition|Definition]]
-2. [[#To Solve 4 Types of Problems|To Solve 4 Types of Problems]]
-3. [[#Parameter|Parameter]]
-4. [[#Hyperparameter|Hyperparameter]]
+```toc
+```
 
 ## Definition
 ML is about giving computers the ability to get better at some task by learning from data, instead of having to explicitly code rules.
@@ -21,12 +17,21 @@ P = need to be defined, e.g., ratio of correctly classified emails
 - build systems that adapt to fluctuating environments
 - help humans learn (e.g., data mining).
 
-## Parameter
-#Parameter
-- Also called as coefficients or weights
-- the variables you can adjust during training, in order to improve the model
-- A model has 1+ model parameters, they determine what it will predict given a new instance (e.g., the slope of a linear model). A learning algorithm tries to find optimal values for these parameters such that the model generalizes well to new instances.
+## Machine Learning Algorithms
 
-## Hyperparameter
-#Hyperparameter
-- A hyperparameter is a parameter of the learning algorithm itself, not of the model (e.g., the amount of regularization to apply).
+### Types
+[1-2_Type_of_ML](1-2_Type_of_ML.md)
+- #Supervised
+- #Unsupervised
+- #Semisupervised
+- #ReinforcementLearning
+
+### Learn Incrementally or Not
+[1-3_Learning_Method](1-3_Learning_Method.md)
+- #OnlineLearning
+- #BatchLearning
+
+### How They Generalize
+[1-3_Learning_Method](1-3_Learning_Method.md)
+- #InstanceBasedLearning
+- #ModelBasedLearning

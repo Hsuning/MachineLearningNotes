@@ -1,19 +1,7 @@
 # Type of Machine Learning
 
-## Table of Contents
-1. [[#Supervised|Supervised]]
-	1. [[#Supervised#Concept|Concept]]
-	2. [[#Supervised#Regression|Regression]]
-	3. [[#Supervised#Classification|Classification]]
-	4. [[#Supervised#Algorithms|Algorithms]]
-2. [[#Unsupervised|Unsupervised]]
-	1. [[#Unsupervised#Concept|Concept]]
-	2. [[#Unsupervised#Clustering|Clustering]]
-	3. [[#Unsupervised#Anomaly Detection & Novelty Detection|Anomaly Detection & Novelty Detection]]
-	4. [[#Unsupervised#Dimensionality Reduction|Dimensionality Reduction]]
-	5. [[#Unsupervised#Association Rule Learning|Association Rule Learning]]
-3. [[#Semi-supervised|Semi-supervised]]
-4. [[#Reinforcement Learning|Reinforcement Learning]]
+```toc
+```
 
 ## Supervised
 #Supervised

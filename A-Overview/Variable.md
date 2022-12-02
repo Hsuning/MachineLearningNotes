@@ -12,6 +12,8 @@
 
 ## Two Groups
 
+*- Attribute = data type, features = predictors = attribute + its value*
+
 ### Categorical (qualitative)
 #CategoricalVariable
 
