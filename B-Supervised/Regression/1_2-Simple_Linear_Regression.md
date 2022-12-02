@@ -84,7 +84,7 @@ def compute_cost(X, y, w, b):
 cost = compute_cost(X_train, y_train, w_init, b_init)
 ```
 
-## #GradientDescent
+## #GradientDescentForLinearRegression
 - Vector notation
 - Parameter
 	- $\vec{w}=[w_1,w_2,w_3,w_4,...,w_n]$
@@ -97,7 +97,8 @@ $$
 \begin{align*} \text{repeat}&\text{ until convergence:} \; \lbrace \newline\;
 & w_j = w_j - \alpha \frac{\partial J(\mathbf{w},b)}{\partial w_j} \; & \text{for j = 0..n-1}\newline
 &b\ \ = b - \alpha \frac{\partial J(\mathbf{w},b)}{\partial b} \newline \rbrace
-\end{align*}$$
+\end{align*}
+$$
 where, n is the number of features, parameters $w_j$, $b$, are updated simultaneously and where  
 $$
 
@@ -258,3 +259,24 @@ y_pred = linear_model.predict(X_train.reshape(-1, 1))
 
 ```
 - a closed-form linear regression
+
+
+#RegularizedLinearRegression
+#GradientDescent #Regularization  #RegularizedCostFunction 
+
+$$
+\begin{align*} \text{repeat}&\text{ until convergence:} \; \lbrace \newline\;
+& w_j = w_j - \alpha \frac{1}{m} \sum\limits_{i = ㄅ}^{m} (f_{\mathbf{w},b}(\mathbf{x}^{(i)}) - y^{(i)})x_{j}^{(i)} + \frac{\lambda}{m}W_j\newline
+&b\ \ = b - \alpha \frac{1}{m} \sum\limits_{i = 1}^{m} (f_{\mathbf{w},b}(\mathbf{x}^{(i)}) - y^{(i)}) \text{   don't have to regularize b} \newline \rbrace \text{ simultaneous update; j=1...n}
+\end{align*}
+$$
+
+Update the weights:
+$$
+w_j = 1w_j - \alpha\frac{\lambda}{m}W_j - \alpha \frac{1}{m} \sum\limits_{i = ㄅ}^{m} (f_{\mathbf{w},b}(\mathbf{x}^{(i)}) - y^{(i)})x_{j}^{(i)}
+$$
+- Given example that $\alpha=0.01 ; \lambda=1; m=50$, the value of term would be $\alpha\frac{\lambda}{m} = 0.0002$
+- Shrinking parameters $w_j$ a little bit by multiply $wj$ by a number slightly less than 1 on every iteration
+
+![[Pasted image 20221201160042.png]]
+
