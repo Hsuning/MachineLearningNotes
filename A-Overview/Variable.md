@@ -9,6 +9,7 @@
 	2. [[#Two Groups#Numerical (quantitative)|Numerical (quantitative)]]
 		1. [[#Numerical (quantitative)#Discrete|Discrete]]
 		2. [[#Numerical (quantitative)#Continuous|Continuous]]
+     
 
 ## Two Groups
 

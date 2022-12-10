@@ -1,0 +1,8 @@
+
+XGBoost is a gradient boosting algorithm, which means that it is based on the idea of boosting, which is a method of converting weak learners into strong learners. In boosting, a weak learner is a model that performs slightly better than random guessing, while a strong learner is a model that performs much better than random guessing. The basic idea of boosting is to train a series of weak learners, and then combine them in a way that results in a strong learner.
+
+The math behind XGBoost is closely related to the math behind gradient boosting and decision trees. Decision trees are a type of model that works by recursively partitioning the input space into regions, and then predicting a constant value within each region. In gradient boosting, the goal is to learn a function that can approximate the underlying distribution of the data by combining a series of simple decision tree models.
+
+The way that XGBoost learns this function is by minimizing the loss function, which is a measure of the difference between the predicted values and the actual values. XGBoost uses gradient descent to minimize the loss function, which involves taking steps in the direction that reduces the value of the loss function. In each step, XGBoost adds a new decision tree model to the ensemble, and then updates the predicted values using the gradient of the loss function. This process is repeated until the loss function converges to a minimum.
+
+Overall, the math behind XGBoost is based on gradient boosting, decision trees, and gradient descent. These techniques allow XGBoost to learn a highly accurate function that can be used to make predictions on new data.

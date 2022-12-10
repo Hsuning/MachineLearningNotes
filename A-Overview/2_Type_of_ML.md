@@ -107,3 +107,15 @@
 #ReinforcementLearning  
 - When we want a robot to learn to walk in various unknown terrains
 - Learning system (_agent_) observe the environment, select and perform actions, and get positive/negative _rewards_ in return. Then learn by itself what is the best strategy to choose when it is in a given situation (_policy_).
+-   Reinforcement learning: This type of machine learning involves training a model to make decisions based on rewards and punishments. The goal of reinforcement learning is to find the optimal strategy for a given task. Examples of reinforcement learning algorithms include Q-learning and Monte Carlo Tree Search.
+
+
+## Transfer Learning
+- Use a model that has been trained on one task as the starting point
+- Leverage the knowledge gained from the pre-trained model
+- To train a new model on a different but related task
+
+
+## Deep learning
+- Artificial neural networks - composed of many interconnected processing nodes
+- automatically learn complex, non-linear relationships in data, and they have been used to achieve state-of-the-art performance in a variety of tasks, such as image and speech recognition.
