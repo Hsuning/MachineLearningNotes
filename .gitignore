@@ -3,3 +3,5 @@ _pycache_/
 .DS_Store
 **/.DS_Store
 **/.ipynb_checkpoints
+**/_images
+

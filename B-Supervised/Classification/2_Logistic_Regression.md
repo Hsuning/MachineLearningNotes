@@ -90,6 +90,7 @@ if $f_{\mathbf{w},b}(x) < 0.5$, predict $y=0$
 
 
 ### Logistic Loss Function
+#BinaryCrossentropy #LogLoss
 - more suited to its non-linear nature where the target is 0 or 1
 - Loss #Loss : measure of the difference of a single example to its target value
 - Cost #Cost: measure of the losses over the training set
