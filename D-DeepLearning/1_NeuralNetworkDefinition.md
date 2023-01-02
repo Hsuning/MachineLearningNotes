@@ -33,6 +33,7 @@ $$
 - (X, y)
 
 ### Output / Activation / Function
+#ActivationFunctions
 - $a=f(x)=\frac{1}{1+e^{-(wx+b)}}$  
 - $a$ = activation, how much a **neuron** is sending a high output to other neurons  
 - degree that the biological neuron is sending a high output value or sending many electrical impulses to other neurons to the downstream from it
