@@ -31,13 +31,23 @@
 - It is easy to cause the problem of #GradientVanishing. The value of the derivative is always less than 1 and always changes around 0, which is very easy to cause the problem of gradient vanishing in the deep neural network.
 - not 0 as the axis of symmetry (this is improved in the tahn function)
 
-### Rectified Linear Unit Function : ReLU(z) = max(0, z)
+### Rectified Linear Unit Function : $a = ReLU(z) = max(0, z)$
 #ReLuFunction
-- Rectified Linear Unit
-- continuous but not differentiable at z = 0 (the slope changes abruptly => make Gradient Descent bounce around)
-- its derivative is 0 for z < 0, and 1 for z > 0
-- However, in practice it works very well and has the advantage of being fast to compute.
+- Rectified Linear Unit (ReLu): provides a continuous linear relationship, with an 'off' range where the output is zero. This off feature makes the Relu a non-linear activation
+- Continuous but not differentiable at z = 0. Its derivative is 0 for z < 0, and 1 for z > 0.
 - Does not have a maximum output value > help reduce some issues during Gradient Descent, ex : vanishing gradient
+- In practice it works very well and has the advantage of being fast to compute.
+![](Pasted%20image%2020230105122218.png)
+- In example (Left), we can see a function that is composed of linear pieces (piecewise linear). The slope is consistent during the linear portion and then changes abruptly at transition points.
+- ReLu provides the ability to turn functions off until they are needed
+- Each unit is responsible for a segment (1, 2 or 3). 
+- Unit 0 cuts off after the interval [0, 1]
+- Unit 1 cuts off until x=1
+- Unit 3 cuts off until x=2
+- $W$ shows that the unit cuts off until which point
+- $b$ is used to keep the output negative until x has reached that point
+
+
 
 ### Hyperbolic Tangent Function : tanh(z) = 2σ(2z) – 1
 - like the logistic function :  S-shaped, continuous, and differentiable
