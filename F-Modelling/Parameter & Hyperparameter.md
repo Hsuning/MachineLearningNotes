@@ -1,5 +1,4 @@
 # Paramerter and Hyperparameter
-
 ```toc
 ```
 
