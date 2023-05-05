@@ -1,5 +1,6 @@
 
 ## Adam algorithm
+#AdamOptimizer
 #AdamAlgorithm #GradientDescent 
 ![](Pasted%20image%2020230104110419.png)
 - Adam: Adaptive Moment Estimation

@@ -95,8 +95,7 @@ cost = compute_cost(X_train, y_train, w_init, b_init)
 
 $$
 \begin{align*} \text{repeat}&\text{ until convergence:} \; \lbrace \newline\;
-& w_j = w_j - \alpha \frac{\partial J(\mathbf{w},b)}{\partial w_j} \; & \text{for j = 0..n-1}\newline
-&b\ \ = b - \alpha \frac{\partial J(\mathbf{w},b)}{\partial b} \newline \rbrace
+& w_j = w_j - \alpha \frac{\partial J(\mathbf{w},b)}{\partial w_j} \; & \text{for j = 0..n-1}\newline & b\ \ = b - \alpha \frac{\partial J(\mathbf{w},b)}{\partial b} \newline \rbrace
 \end{align*}
 $$
 where, n is the number of features, parameters $w_j$, $b$, are updated simultaneously and where  

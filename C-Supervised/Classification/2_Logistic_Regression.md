@@ -300,9 +300,15 @@ print("Accuracy on training set:", lr_model.score(X, y))
 #RegularizedLogisticRegression
 #Regularization #RegularizedCostFunction 
 
-$$
-J(\vec{w}, b) = -\frac{1}{m} \sum_{i=1}^{m} [ y^{(i)}log(f_{\vec{w},b} (\vec{x}^{(i)})) + (1 - y^{(i)})log(1 - f_{\vec{w},b} (\vec{x}^{(i)})] + \frac{\lambda}{2m} \sum_{j=1}^{n} W_j^2
-$$
+Recall that for regularized logistic regression, the cost function is of the form
+$$J(\mathbf{w},b) = \frac{1}{m}  \sum_{i=0}^{m-1} \left[ -y^{(i)} \log\left(f_{\mathbf{w},b}\left( \mathbf{x}^{(i)} \right) \right) - \left( 1 - y^{(i)}\right) \log \left( 1 - f_{\mathbf{w},b}\left( \mathbf{x}^{(i)} \right) \right) \right] + \frac{\lambda}{2m}  \sum_{j=0}^{n-1} w_j^2$$
+
+Compare this to the cost function without regularization (which you implemented above), which is of the form 
+
+$$ J(\mathbf{w}.b) = \frac{1}{m}\sum_{i=0}^{m-1} \left[ (-y^{(i)} \log\left(f_{\mathbf{w},b}\left( \mathbf{x}^{(i)} \right) \right) - \left( 1 - y^{(i)}\right) \log \left( 1 - f_{\mathbf{w},b}\left( \mathbf{x}^{(i)} \right) \right)\right]$$
+
+The difference is the regularization term, which is $$\frac{\lambda}{2m}  \sum_{j=0}^{n-1} w_j^2$$ 
+Note that the $b$ parameter is not regularized.
 - Penalizing $W_j$ , preventing them for being too large
 - Even fitting a high order polynomial with lots of parameters, you can still get a reasonable decision boundaries
 
